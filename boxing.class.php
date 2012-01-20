@@ -336,11 +336,11 @@ class boxing {
 
 		foreach ($array as $item) {
 
-			$tmp_array[$item["diff"]][] = $item;
+			$tmp_array[(string)$item["diff"]][] = $item;
 
 		}
 
-		krsort($tmp_array);
+		krsort($tmp_array, SORT_NUMERIC);
 
 		$array = array();
 
