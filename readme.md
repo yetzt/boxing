@@ -1,16 +1,16 @@
 # boxing.class.php
 
 this some kind of box packing algorithm,
-check if n boxes fit in n bigger boxes
-i use this for checking if items will fit a packaging box
-if this algorithm says true: they do definitely fit
+check if n boxes fit in n bigger boxes.
+i use this for checking if items will fit a packaging box.
+if this algorithm says true: they do definitely fit, 
 if this algorithm says false: they most probably will not fit, but this is a program, not a cop.
 
 ## disclaimer
 
-this is not an accurate solution for knapsack or any of those fancy np-complete combinatory problems
-i am not a mathematican, i have no idea what i am talking about, and also the german wikipedia sucks on this topic
-quick and dirty, works for me, public domain, donations very welcome
+this is not an accurate solution for knapsack or any of those fancy np-complete combinatory problems.
+i am not a mathematican, i have no idea what i am talking about, and also the german wikipedia sucks on this topic.
+quick and dirty, works for me, public domain, donations very welcome.
 
 ## author
 
