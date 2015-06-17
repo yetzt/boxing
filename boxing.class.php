@@ -288,7 +288,7 @@ class boxing {
 
 			foreach ($value as $index => $val) {
 
-				$sort[$index] = $val[$subkey];
+				$sort[$index] = $value[$subkey];
 
 			}
 
