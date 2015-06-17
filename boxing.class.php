@@ -108,37 +108,49 @@ class boxing {
 
 	}
 
-	public function fits_volume() {
-
-		$inner_volume = 0;
+	public function get_outer_volume() {
 		$outer_volume = 0;
-
-		foreach ($this -> inner_boxes as $inner) {
-
-			$inner_volume += ($inner["dimensions"][0] * $inner["dimensions"][1] * $inner["dimensions"][2]);
-
-		}
-
+		
 		foreach ($this -> outer_boxes as $outer) {
 
 			$outer_volume += ($outer["dimensions"][0] * $outer["dimensions"][1] * $outer["dimensions"][2]);
 
 		}
+		
+		return $outer_volume;
+	}
+	
+	public function get_inner_volume() {
+		$inner_volume = 0;
+		
+		foreach ($this -> inner_boxes as $inner) {
 
-		if ($inner_volume > $outer_volume) {
+			$inner_volume += ($inner["dimensions"][0] * $inner["dimensions"][1] * $inner["dimensions"][2]);
+
+		}
+		
+		return $inner_volume;
+	}
+	
+
+	public function fits_volume() {
+		$return = false;
+		
+		if ($this->get_inner_volume() > $this->get_outer_volume()) {
 
 			/* inner boxes have more volume than outer ones */
 
-			return false;
+			$return = false;
 
 		} else {
 
-			return true;
-
+			$return = true;
 		}
-
+		
+		return $return;
 	}
-
+	
+	
 	private function find_subboxes($inner_box_id, $outer_box_id) {
 
 		$inner_dimensions = $this->inner_boxes[$inner_box_id]["dimensions"];
